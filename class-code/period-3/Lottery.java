@@ -19,6 +19,8 @@ public class Lottery {
         if(num < 1 || num > 69) {
             return false;
         }
+
+        // linear search; is the number already in the array?
         for(int i = 0; i < arr.length; i++) {
             if(arr[i] == num) {
                 return false;
