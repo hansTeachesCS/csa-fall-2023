@@ -8,6 +8,8 @@ public class GradeLoop {
         }
 
         System.out.println(toString(grades));
+        grades = curveScores(grades);
+        System.out.println(toString(grades));
     }
 
     public static int genGrade() {
@@ -30,5 +32,19 @@ public class GradeLoop {
         return str + "]";
     }
 
+    public static int[] curveScores(int[] arr) {
+        // does not allow edits/updates to the arr
+        // for(int score : arr) {
+        //     if(score <= 95) {
+        //         score += 5;
+        //     }
+        // }
 
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] <= 95) {
+                arr[i] += 5;
+            }
+        }
+        return arr;
+    }
 }
