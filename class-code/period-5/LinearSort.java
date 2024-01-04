@@ -20,11 +20,11 @@ public class LinearSort {
                 }
             } // end inner for loop
             // swap
-            int temp = min;
-            arr[i] = arr[minIndex];
+            int temp = arr[i];
+            arr[i] = min;
             arr[minIndex] = temp;
 
-            System.out.println("when i is: " + i + " min is: " + min);
+            // System.out.println("when i is: " + i + " min is: " + min);
         }
         System.out.println(Arrays.toString(arr));
     } // end main method
