@@ -2,19 +2,28 @@ public class Student {
     // fields, instance variables
     private String name;
     private int gradeLevel;
-    // TO DO: add the rest of the fields you want
-
+    private int[] scores;
+    private String osis;
     
     // constructor method 
-    public Student(String n, int grade) {
+    public Student(String n, int grade, int[] s, String o) {
         name = n;
         gradeLevel = grade;
+        scores = s;
+        osis = o;
     }
 
+    public double calculateAverage() {
+        double sum = 0;
+        for(int score : scores) {
+            sum += score;
+        }
+        return sum / scores.length;
+    }
 
     // other methods
     public String toString() {
-        return name + " is a " + gradeLevel + "th grader.";
+        return name + "(" + osis + ") is a " + gradeLevel + "th grader.";
     }
 
     
