@@ -14,6 +14,27 @@ public class Student {
     }
 
     // other methods
+    public int[] getScores() {
+        return scores;
+    }
+
+    public void addScore(int score) {
+        // Create a new array of size n+1.
+        int n = scores.length;
+        int[] newScores = new int[n + 1];
+        
+        // Add the n elements of the original array in this array.
+        for(int i = 0; i < n; i++) {
+            newScores[i] = scores[i];
+        }
+
+        // Add the new element in the n+1 th position.
+        newScores[n] = score;
+
+        // Keep newScores in memory.
+        scores = newScores;
+    }
+
     public String toString() {
         return name + " " + osis;
     }
