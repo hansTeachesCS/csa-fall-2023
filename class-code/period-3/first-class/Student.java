@@ -18,6 +18,10 @@ public class Student {
         return scores;
     }
 
+    public void setName(String newName) {
+        name = newName;
+    } 
+
     public void addScore(int score) {
         // Create a new array of size n+1.
         int n = scores.length;
@@ -33,6 +37,14 @@ public class Student {
 
         // Keep newScores in memory.
         scores = newScores;
+    }
+
+    public double calculateAverage() {
+        double sum = 0;
+        for(int score : scores) {
+            sum += score;
+        }
+        return sum/scores.length;
     }
 
     public String toString() {
