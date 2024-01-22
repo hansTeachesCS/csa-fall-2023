@@ -19,6 +19,12 @@ public class Main {
         // System.out.println(Arrays.toString(s2.getScores()));
         // System.out.println(s2.calculateAverage());
 
+        Student s3 = new Student("Kiku", 9, "678901234");
+        System.out.println(s3);
+        System.out.println(Arrays.toString(s3.getScores()));
+        s3.addScore(100);
+        System.out.println(Arrays.toString(s3.getScores()));
+
         // TO DO: create more students!
     }
 }

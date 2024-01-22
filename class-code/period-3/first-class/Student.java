@@ -13,6 +13,12 @@ public class Student {
         osis = o;
     }
 
+    public Student(String n, int g, String o) {
+        name = n;
+        gradeLevel = g;
+        osis = o;
+    }
+
     // other methods
     public int[] getScores() {
         return scores;
@@ -23,20 +29,27 @@ public class Student {
     } 
 
     public void addScore(int score) {
-        // Create a new array of size n+1.
-        int n = scores.length;
-        int[] newScores = new int[n + 1];
-        
-        // Add the n elements of the original array in this array.
-        for(int i = 0; i < n; i++) {
-            newScores[i] = scores[i];
+        if(scores == null) {
+            scores = new int[1];
+            scores[0] = score;
         }
+        else{
+            // Create a new array of size n+1.
+            int n = scores.length;
+            int[] newScores = new int[n + 1];
+            
+            // Add the n elements of the original array in this array.
+            for(int i = 0; i < n; i++) {
+                newScores[i] = scores[i];
+            }
 
-        // Add the new element in the n+1 th position.
-        newScores[n] = score;
+            // Add the new element in the n+1 th position.
+            newScores[n] = score;
 
-        // Keep newScores in memory.
-        scores = newScores;
+            // Keep newScores in memory.
+            scores = newScores;
+        }
+        
     }
 
     public double calculateAverage() {
